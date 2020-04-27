@@ -1,0 +1,7 @@
+movie_database.tax:
+  path: '/movie_database/test'
+  defaults:
+    _controller: '\Drupal\movie_database\Controller\testing::test '
+    _title: 'My first page in Drupal8 '
+  requirements:
+    _permission: 'access content'
