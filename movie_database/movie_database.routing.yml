@@ -5,3 +5,21 @@ movie_database.tax:
     _title: 'My first page in Drupal8 '
   requirements:
     _permission: 'access content'
+
+
+movie_database.costar:
+  path: '/movie_database/costar/{movie}/{nid}'
+  defaults:
+    _controller: '\Drupal\movie_database\Controller\testing::costar'
+    _title: 'Co stars of the actor '
+  requirements:
+    _permission: 'access content'
+
+
+moviedb.actor:
+  path: '/movie_database/{node}'
+  defaults:
+    _controller: '\Drupal\movie_database\Controller\testing::actorMovie'
+    _title: 'actors list with their recent movies'
+  requirements:
+    _permission: 'access content'

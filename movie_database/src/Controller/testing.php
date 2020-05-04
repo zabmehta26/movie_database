@@ -160,6 +160,37 @@ class testing extends ControllerBase{
 
 
 
+      public function costar($movie=NULL, $nid=NULL) {
+      $node = Node::load($movie);
+      $target_id = array();
+      $target_id = $node->field_actor_role->getValue();
+      foreach ($target_id as $value) {
+        $paragraph = Paragraph::load($value['target_id']);
+        $actor_id = $paragraph->field_actor->target_id;
+        if($actor_id == $nid) {
+          $role = $paragraph->field_role->value;
+          $actor = Node::load($actor_id);
+          $node_image_fid = $actor->field_dp->target_id;
+          if ( !is_null($node_image_fid) ){
+            $image_entity = \Drupal\file\Entity\File::load($node_image_fid);
+            $image_entity_url = $image_entity->url();
+          }
+          else{
+            $image_entity_url = "/sites/default/files/default_images/obama.jpg";
+          }
+          $node_title = $actor->title->value;
+          $actors['nid'] = $actor->nid->value;
+        }
+      }
+      $items = [
+         'name' => $node_title,
+         'image' => $image_entity_url,
+         'role' => $role,
+       ];
+      return new JsonResponse($items);
+    }
+
+
 }
 
 ?>
