@@ -1,0 +1,6 @@
+moviedatabase_js:
+  js:
+    js/ajax.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.dialog.ajax

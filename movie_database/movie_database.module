@@ -1,7 +1,7 @@
 <?php
 
 function movie_database_page_attachments(array &$page) {
-  $page['#attached']['library'][] = 'movie_database/movie_database_css';
+  $page['#attached']['library'][] = 'movie_database/movie_database_js';
 }
 
 function movie_database_theme($existing, $type, $theme, $path) {

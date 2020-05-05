@@ -8,6 +8,14 @@
         console.log(nid);
         console.log(movie_nid);
         console.log(Drupal.url('movie_database/costar' + movie_nid + '/' + nid));
+        if (nid) {
+          $.ajax({
+            url: Drupal.url('moviedb/costar/' + movie_nid + '/' + nid),
+            type:"POST",
+            contentType:"application/json; charset=utf-8",
+            dataType:"json",
+          });
+        }
       });
     }
   }
