@@ -16,10 +16,19 @@ movie_database.costar:
     _permission: 'access content'
 
 
-moviedb.actor:
+movie_database.actor:
   path: '/movie_database/{node}'
   defaults:
     _controller: '\Drupal\movie_database\Controller\testing::actorMovie'
     _title: 'actors list with their recent movies'
+  requirements:
+    _permission: 'access content'
+
+
+movie_database.actors:
+  path: '/movie_database/actors'
+  defaults:
+    _controller: '\Drupal\movie_database\Controller\testing::getActors'
+    _title: 'List of all actors'
   requirements:
     _permission: 'access content'

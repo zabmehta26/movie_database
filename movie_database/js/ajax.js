@@ -10,10 +10,25 @@
         console.log(Drupal.url('movie_database/costar' + movie_nid + '/' + nid));
         if (nid) {
           $.ajax({
+            // Hitting the url of costar page.
             url: Drupal.url('moviedb/costar/' + movie_nid + '/' + nid),
             type:"POST",
+            // data: JSON.stringify(data),
             contentType:"application/json; charset=utf-8",
             dataType:"json",
+            // If function return JsonResponse suucessfully pop up a dialouge box.
+            success: function(response) {
+              console.log(response);
+              $(".modal-title").html(response.name);
+              $(".modal-body img ").attr("src",response.image);
+              $(".modal-body p").html(response.role);
+              // When clicked on costar name costar pop up will open.
+              $('.costar_popup').show();
+              // when click on close button hide the pop-up
+              $('.popupCloseButton').click(function(){
+                $('.costar_popup').hide();
+              });
+            }
           });
         }
       });
