@@ -32,3 +32,12 @@ movie_database.actors:
     _title: 'List of all actors'
   requirements:
     _permission: 'access content'
+
+
+movie_databsae_form:
+  path: '/movie_databse/filter'
+  defaults:
+    _form: '\Drupal\movie_database\Form\Filter'
+    _title: 'Movies list'
+  requirements:
+    _permission: 'access content'
