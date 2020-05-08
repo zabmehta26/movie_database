@@ -11,9 +11,15 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Controller\ControllerBase;
 
-
+/**
+ * [the class contains the function for the actor's list and movie list page]
+ */
 class testing extends ControllerBase{
 
+ /**
+  * [the function below returns the movie list array]
+  * @return [array] [the array is of the movie list]
+  */
   public function test() {
     $bundle = 'movies';
     $movie = NULL;
@@ -83,10 +89,11 @@ class testing extends ControllerBase{
 }
 
 
-
-
-
-
+/**
+   * This function is used to return list of movies of a particular actor.
+   * @param  $type type of id       $node  id of a node.
+   * @return mixed
+*/
   public function actorMovie (NodeInterface $node) {
 
     // Get Name of the actor whose id is passed.
@@ -162,6 +169,11 @@ class testing extends ControllerBase{
     }
   }
 
+  /**
+     * This function is used to return JsonResponse to popup a box for costar.
+     * @param  $movie=Null,$nid=Null Default parameters for movie and actor node id.
+     * @return mixed
+  */
 
       public function costar($movie=NULL, $nid=NULL) {
       $node = Node::load($movie);
@@ -194,7 +206,10 @@ class testing extends ControllerBase{
     }
 
 
-
+    /**
+       * This function is used to return actor list data array.
+       * @return mixed
+    */
       public function getActors () {
           $query = \Drupal::entityQuery('node')
           ->condition('status', 1)

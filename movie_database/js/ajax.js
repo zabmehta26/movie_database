@@ -1,3 +1,6 @@
+/**
+ * [the below code is to popup a dialogue box when clicked on co-star name]
+ */
 (function($, window, document, undefined) {
     Drupal.behaviors.general = {
     attach: function (context) {
