@@ -1,4 +1,8 @@
-moviedatabase_js:
+movie_database_js:
+  version: 2.0
+  css:
+    theme:
+      css/style.css: {}
   js:
     js/ajax.js: {}
   dependencies:
