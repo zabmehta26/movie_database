@@ -41,3 +41,12 @@ movie_databsae_form:
     _title: 'Movies list'
   requirements:
     _permission: 'access content'
+
+
+movie_database.admin_settings:
+  path: '/admin/config/movie_database'
+  defaults:
+    _form: '\Drupal\movie_database\Form\ModuleConfigurationForm'
+    _title: 'Movie Database configuration screen'
+  requirements:
+    _permission: 'administer site configuration'

@@ -4,3 +4,4 @@ description: Example for Drupal 8 modules
 package: Custom
 version: 1.0
 core: 8.x
+configure: movie_database.admin_settings
