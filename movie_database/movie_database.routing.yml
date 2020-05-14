@@ -1,0 +1,52 @@
+movie_database.tax:
+  path: '/movie_database/test'
+  defaults:
+    _controller: '\Drupal\movie_database\Controller\testing::test '
+    _title: 'My first page in Drupal8 '
+  requirements:
+    _permission: 'access content'
+
+
+movie_database.costar:
+  path: '/movie_database/costar/{movie}/{nid}'
+  defaults:
+    _controller: '\Drupal\movie_database\Controller\testing::costar'
+    _title: 'Co stars of the actor '
+  requirements:
+    _permission: 'access content'
+
+
+movie_database.actor:
+  path: '/movie_database/{node}'
+  defaults:
+    _controller: '\Drupal\movie_database\Controller\testing::actorMovie'
+    _title: 'actors list with their recent movies'
+  requirements:
+    _permission: 'access content'
+
+
+movie_database.actors:
+  path: '/movie_database/actors'
+  defaults:
+    _controller: '\Drupal\movie_database\Controller\testing::getActors'
+    _title: 'List of all actors'
+  requirements:
+    _permission: 'access content'
+
+
+movie_databsae_form:
+  path: '/movie_databse/filter'
+  defaults:
+    _form: '\Drupal\movie_database\Form\Filter'
+    _title: 'Movies list'
+  requirements:
+    _permission: 'access content'
+
+
+movie_database.admin_settings:
+  path: '/admin/config/movie_database'
+  defaults:
+    _form: '\Drupal\movie_database\Form\ModuleConfigurationForm'
+    _title: 'Movie Database configuration screen'
+  requirements:
+    _permission: 'administer site configuration'

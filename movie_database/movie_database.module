@@ -1,0 +1,35 @@
+<?php
+
+/**
+   * Implemetation of hook_page_attachments function.
+   * This function is used to attach a file to a set or subset of pages.
+   * @param  $page an array of page on which file will be attached.
+*/
+
+function movie_database_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'movie_database/movie_database_js';
+}
+
+/**
+   * Implemetation of hook_theme function.
+   * This function is used to return a renderable array for different themes.
+   * @param  $existing, $type, $theme, $path
+   * @return mixed
+*/
+
+function movie_database_theme($existing, $type, $theme, $path) {
+  return array(
+    'temp' => array(
+      'variables' => array('items' => array(), 'title' => '')
+    ),
+    'actormovie_list' => array(
+      'variables' => array('items' => array(), 'title' => '')
+    ),
+    'actors_list' => array(
+      'variables' => array('items' => array(), 'title' => '')
+    ),
+    'filter' => array(
+      'render element' => 'form',
+    ),
+  );
+}
